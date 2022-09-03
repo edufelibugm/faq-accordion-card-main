@@ -1,0 +1,284 @@
+/* EXTERNAL */
+/*
+## Colors
+
+### Primary
+
+#### Text
+
+- Very dark desaturated blue: hsl(238, 29%, 16%)
+- Soft red: hsl(14, 88%, 65%)
+
+#### Gradient
+
+Background gradient:
+
+- Soft violet: hsl(273, 75%, 66%)
+- Soft blue: hsl(240, 73%, 65%)
+
+### Neutral
+
+#### Text
+
+- Very dark grayish blue: hsl(237, 12%, 33%)
+- Dark grayish blue: hsl(240, 6%, 50%)
+
+#### Dividers
+
+- Light grayish blue: hsl(240, 5%, 91%)
+*/
+
+.colors {
+    /* Primarys */
+    /* Text */
+    color: hsl(238, 29%, 16%); /*Very dark desaturated blue*/
+    color: hsl(14, 88%, 65%); /*Soft red*/
+
+    /* Gradient */
+    color: hsl(273, 75%, 66%); /*Soft violet*/
+    color: hsl(240, 73%, 65%); /*Soft blue*/
+/*------------------------------------------------------------------------*/
+    /* Neutral */
+    /* Text */
+    color: hsl(237, 12%, 33%); /*Very dark grayish blue*/
+    color: hsl(240, 6%, 50%); /*Dark grayish blue*/
+
+    /* Dividers */
+    color: hsl(240, 5%, 91%); /*Light grayish*/
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');
+
+/* GENERAL */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background: linear-gradient(hsl(273, 75%, 66%),hsl(240, 73%, 65%));
+}
+
+/* SPECIFY */
+
+.card {
+    width: 920px;
+    height: 510px;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    justify-content: center;
+}
+    .card .image {
+        width: 100%;
+        height: 100%;
+        background: url(images/bg-pattern-desktop.svg);
+        background-position: -590px -300px;
+        background-size: initial;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+        .card .image img {
+            height: 340px;
+            position: relative;
+            bottom: -80px;
+            left: -80px;
+        }
+    .card .cube {
+        position: absolute;
+        top: 40%;
+        left: -95px;
+    }
+    .card .card-cont {
+        padding: 70px 95px 0 0;
+    }
+        .card .card-cont h1 {
+            margin-bottom: 45px;
+            width: min-content;
+            cursor: pointer;
+        }
+        .card .card-cont .desplegable {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+            .card .card-cont .desplegable .desp {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+            .card .card-cont .desplegable a {
+                text-decoration: none;
+                color: hsl(237, 12%, 33%);
+                font-size: 15px;
+                transition: all .3s;
+                width: 100%;
+                justify-content: space-around;
+                margin-bottom: 15px;
+            }
+                .card .card-cont .desplegable a:hover {
+                    color: hsl(14, 88%, 65%);
+                    transition: all .5s;
+                }
+                .card .card-cont .desplegable a.focus {
+                    color: hsl(238, 29%, 16%);
+                    font-weight: 700;
+                    transition: all .3s;
+                }
+                .card .card-cont .desplegable a .arrow {
+                    transform: rotate(0deg);
+                    transition: all .3s;
+                }
+                .card .card-cont .desplegable a .deg {
+                    transform: rotate(180deg);
+                    transition: all .3s;
+                }
+            .card .card-cont .desplegable p {
+                display: none;
+                font-size: 12px;
+                transition: .3s;
+                height: 0px;
+                margin-bottom: 15px;
+                margin-top: 15px;
+                color: hsl(240, 6%, 50%);
+            }
+            .card .card-cont .desplegable .show {
+                display: block;
+                height: fit-content;
+                transition: .3s;
+            }
+    
+
+@media (max-width: 920px) {
+    main {
+        width: 100vw;
+        height: 120vh;
+        display: flex;
+        background: linear-gradient(hsl(273, 75%, 66%),hsl(240, 73%, 65%));
+    }
+
+    .card {
+        width: 328px;
+        height: 535px;
+        border-radius: 20px;
+        position: absolute;
+        top: 148px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 25% 75%; 
+        background: white;
+        background-position: left;
+        background-size: contain;
+        background-repeat: no-repeat;
+        justify-content: center;
+    }
+        .card .image {
+            width: 328px;
+            height: max-content;
+            background: url(images/bg-pattern-mobile.svg);
+            background-position: top;
+            background-size: initial;
+            background-repeat: no-repeat;
+            overflow: visible;
+        }
+            .card .image img {
+                height: 180px;
+                position: relative;
+                left: 45px;
+                top: -110px;
+            }
+        .card .cube {
+            width: 120px;
+            position: absolute;
+            top: -55px;
+            left: 25px;
+        }
+        .card .card-cont {
+            padding: 0 25px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+            .card .card-cont h1 {
+                margin-bottom: 40px;
+                position: relative;
+                width: min-content;
+                cursor: pointer;
+                left: 40%;
+            }
+            .card .card-cont .desplegable {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+                .card .card-cont .desplegable .desp {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                }
+                .card .card-cont .desplegable a {
+                    text-decoration: none;
+                    color: hsl(237, 12%, 33%);
+                    font-size: 15px;
+                    transition: all .3s;
+                    width: 100%;
+                    justify-content: space-around;
+                    margin-bottom: 15px;
+                }
+                    .card .card-cont .desplegable a:hover {
+                        color: hsl(14, 88%, 65%);
+                        transition: all .5s;
+                    }
+                    .card .card-cont .desplegable a.focus {
+                        color: hsl(238, 29%, 16%);
+                        font-weight: 700;
+                        transition: all .3s;
+                    }
+                    .card .card-cont .desplegable a .arrow {
+                        transform: rotate(0deg);
+                        transition: all .3s;
+                    }
+                    .card .card-cont .desplegable a .deg {
+                        transform: rotate(180deg);
+                        transition: all .3s;
+                    }
+                .card .card-cont .desplegable p {
+                    display: none;
+                    font-size: 12px;
+                    transition: .3s;
+                    height: 0px;
+                    margin-bottom: 15px;
+                    margin-top: 15px;
+                    color: hsl(240, 6%, 50%);
+                }
+                .card .card-cont .desplegable .show {
+                    display: block;
+                    height: fit-content;
+                    transition: .3s;
+                }
+}
